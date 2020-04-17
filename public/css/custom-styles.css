@@ -1,0 +1,419 @@
+/* CUSTOM STYLES FOR THIS PROJECT */
+body{
+    background: #fefefe;
+    color: #0e0e0e;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+/* NAVIGATION STYLES */
+nav{
+    padding: 1rem;
+    background-color: #fefefe;
+    height: 3rem;
+    border-bottom: 1px solid #b1aeae;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
+nav a{
+    text-decoration: none;
+    color: #002060;
+}
+nav a:hover{
+    text-decoration: none;
+    color: #002060;
+}
+nav .nav-bar{
+    display: flex;
+    justify-content: space-between;
+}
+nav .nav-bar .menu{
+    display: flex;
+    flex-direction: row;
+}
+.menu div{
+    margin: 0 1rem 0 1rem;
+    
+}
+.brand{
+    margin-left: 1rem;
+}
+nav .brand{
+    text-transform: uppercase;
+}
+.brand h5{
+    color: #1ab5d1;
+}
+
+nav .menu h5{
+    text-transform: capitalize;
+    color: #002060;
+    font-weight: bold;
+}
+nav .menu h5:hover{
+    cursor: pointer;
+}
+/* nav .menu h5:hover::after{
+    content: "";
+    background: #002060;
+    display: block;
+    height: 1px;
+    width: 5rem;
+    margin: 0.5rem 1rem 0 1rem;
+} */
+nav .menu h5:hover{
+    border-bottom: 2px solid #1ab5d1;
+    padding-bottom: 0.51rem;
+}
+
+
+/* STYLES FOR HOMEPAGE */
+.first-grid, .second-grid, .third-grid, 
+.fourth-grid, .fifth-grid, .sixth-grid, .seventh-grid, 
+.eight-grid, .ninth-grid, .tenth-grid, .eleventh-grid, .twelfth-grid,
+.thirteenth-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+/* FIRST GRID */
+.first-grid{
+    background: #ffe699;
+    min-height: 100vh;
+}
+.center-homepage-lexaid-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lexaid h1{
+    text-transform: uppercase;
+    font-size: 15rem;
+    font-weight: bolder;
+    color: #002060;
+}
+.text{
+    font-size: 2rem;
+    font-weight: bolder;
+    color: rgb(59, 56, 56);
+}
+.blue-text{
+    color: rgb(0 32 96);
+    font-size: 1.2rem;
+}
+.side-text{
+    margin-left: 18%;
+}
+.arrow-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arrow-image img:hover{
+    cursor: pointer;
+}
+
+/* SECOND GRID */
+.second-grid{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 100vh;
+    grid-auto-rows: minmax(100px,auto);
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+.second-grid .col-1{
+    display: flex;
+    flex-direction: column;
+}
+.mobile-image img{
+    height: 600px;
+    width: 600px;
+}
+.first-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}  
+.briefed-cases h1{
+    font-weight: bold;
+    color: #002060;
+} 
+.briefed-cases p{
+    font-size: 1.2rem;
+}
+.quotes h1{
+    font-weight: bold;
+    color: #002060;
+}
+.quotes p{
+    font-size: 1.2rem;
+}
+.third-col{
+    margin-top: 10rem;
+}
+.section h1{
+    font-weight: bold;
+    color: #002060;
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+.section h5{
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: #002060;
+}
+.section p{
+font-weight: bolder;
+color: #e32d6e;
+font-size: 1rem;
+}
+.ios-h5{
+    margin-top: 1.5rem;
+}
+
+/* THIRD GRID */
+.third-grid{
+    position: relative;
+}
+.background-image{
+    min-height: 80vh;
+    background: url('../images/search-background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: brightness(0.5);
+    width: 100%;
+}
+.search-field{
+    z-index: 1;
+    margin-top: -18rem;
+}
+.search-bar{
+    height: 3rem;
+}
+.search-bar .search-button{
+    padding: 1rem;
+}
+.search-bar, .search-button {
+    font-family: cursive;
+}
+.search-button{
+    background: #7030a0;
+    height: 3rem;
+    font-weight: bold;
+}
+.search-button:hover{
+    background: #e6c406;
+}
+.subtitle{
+    text-align: center;
+    color: #fefefe;
+    padding-top: 1rem;
+    font-size: 1.1rem;
+}
+
+/* FOURTH GRID */
+.fourth-grid{
+    min-height: 80vh;
+}
+.law-of-contract{
+    background: #e32d6e;
+    color: #fefefe;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.criminal-law{
+    background: #1ab5d1;
+    color: #fefefe;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.land-law{
+    background: #7030a0;
+    color: #fefefe;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.law-of-evidence{
+    background: #54ac58;
+    color: #fefefe;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.civil-procedure{
+    background: #fd9415;
+    color: #fefefe;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.constitutional-law{
+    background: #002060;
+    color: #fefefe;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.card-body h5{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.card-body h5 span{
+    padding: 3rem;
+}
+.card:hover{
+    cursor: pointer;
+}
+
+/*FIFTH GRID*/
+
+.briefs-display{
+    border-bottom: 1px solid #b1aeae;
+}
+.law-of-contract-dl-btn{
+    background: #e32d6e;
+}
+.download-button{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #fefefe;
+    border: none;
+    padding: 0.2rem;
+}
+.name{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.type{
+    font-size: 1.2rem;
+}
+.name, .type{
+    padding: 1rem;
+}
+
+/* SIXTH GRID */
+
+.single-pdf{
+    display: flex;
+    justify-content: center;
+}
+.single-brief-view .single-pdf :nth-child(1){
+    align-self: flex-start;
+}
+
+/* SEVEBTH GRID */
+
+.criminal-law-dl-btn{
+    background: #1ab5d1;
+}
+
+/* EIGHT GRID */
+
+.land-law-dl-btn{
+    background: #7030a0;
+}
+
+/* NINTH GRID */
+
+.evidence-law-dl-btn{
+    background: #54ac58;
+}
+
+/* TENTH GRID */
+
+.civil-procedure-dl-btn{
+    background: #fd9415;
+}
+
+/*  ELEVENTH GRID*/
+
+.constitutional-law-dl-btn{
+    background: #002060;
+}
+
+/* TWELFTH GRID */
+
+
+/* QUOTES */
+.quote-category-header{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: #fefefe;
+    padding: 0.8rem;
+    color: #002060;
+    border-radius: 1rem;
+    width: 20%;
+    margin: 0 auto;
+}
+
+/* BLOG SECTION */
+.thirteenth-grid{
+    min-height: 100vh;
+}
+.blog-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 1rem;
+    margin-top: 2rem;
+}
+.blog-heading{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #002060;
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+.blog-thumbnail{
+    height: 13rem;
+    width: 23rem;
+}
+.read-more{
+    display: block;
+}
+.blog-content p{
+    font-size: 0.9rem;
+    padding: 1rem;;
+}
+.read-more:hover{
+    cursor: pointer;
+}
+
+/* CONTACT US SECTION */
+.contact-btn{
+    background-color: #002060;
+    color: #fefefe;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+/* FOOTER */
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    background: #ffe699;
+}
+.brand img{
+    height: 10rem;
+    width: 15rem;
+}
+.footer p{
+    color: #002060;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
