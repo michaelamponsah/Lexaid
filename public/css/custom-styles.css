@@ -379,6 +379,10 @@ font-size: 1rem;
     height: 13rem;
     width: 23rem;
 }
+.blog-thumbnail-admin{
+    height: 4rem;
+    width: 6rem;
+}
 .read-more{
     display: block;
 }
