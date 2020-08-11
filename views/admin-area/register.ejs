@@ -1,0 +1,30 @@
+<div class="row">
+<div class="col-md-4"></div>
+
+<div class="col-md-4 login-forms">
+    <div class="card-body border border-primary"" style="margin-top: 10rem;">
+        <h5 class="card-title text-primary">Register</h5>
+        <%- include('../partials/messages')%>
+    <form action="/api/v1/user/register" method="POST">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" placeholder="Username" name="username" value="<%= typeof username != 'undefined' ? username : '' %>"/>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" placeholder="Password" name="password" value="<%= typeof password != 'undefined' ? password : '' %>"/>
+        </div>
+        <div class="form-group">
+          <label for="password">Password Confirm</label>
+          <input type="password" class="form-control" placeholder="Password Confirm" name="passwordConfirm" value="<%= typeof passwordConfirm != 'undefined' ? passwordConfirm : '' %>"/>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary form-control">
+            register
+          </button>
+    </form>
+      </div>
+  </div>
+
+<div class="col-md-4"></div>
+</div>

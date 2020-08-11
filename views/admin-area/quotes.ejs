@@ -1,0 +1,76 @@
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+        <!-- Nav bar -->
+        <%- include('../partials/admin-side-nav') %>
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+          <div id="content">
+            <div class="row mt-5">
+              <div class="container-fluid">
+                <div class="row mt-5">
+                  <div class="col-md-6">
+                      <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Add Quotes</h5>
+                            <%- include('../partials/messages')%>
+                            <%- include('../partials/success')%>
+                            <form action="/api/v1/quotes/quotes" method="POST" enctype="multipart/form-data">
+                              <div class="form-group">
+                                <div class="form-group">
+                                  <input type="text" class="form-control" name="quoteTitle" placeholder="Title">
+                                </div>
+                                <select name="quoteCategory" id="quote-category" class="form-control form-sm">
+                                  <option value="<% typeof quoteCategory != 'undefined' ? quoteCategory : '' %>"><%= typeof quoteCategory != 'undefined' ? quoteCategory : "Select Category" %></option>
+                                  <option value="Category 1">Inspirational</option>
+                                  <option value="Category 2">Academics</option>
+                                  <option value="Category 3">Professional</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <input type="file" class="form-control-file" name="quoteFile" required>
+                              </div>
+                              <div class="form-group">
+                                <button class="btn btn-primary form-control">Save</button>
+                              </div>
+                            </form>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Manage Quotes</h5>
+                            <% quotes.forEach(quote => { %>
+                              <ul class="list-group">
+                                <li class="list-group-item">
+                                  <div class="row">
+                                    <div class="col-sm-8"><%= quote.title %></div>
+                                    <div class="col-sm-2">
+                                      <button class="btn btn-outline-primary btn-sm">Edit</button>
+                                    </div>
+                                    <div class="col-sm-2">
+                                      <button class="btn btn-outline-danger btn-sm">Delete</button>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                              <% }) %>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <!-- End of Main Content -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+      <!-- End of Page Wrapper -->
+    
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+    

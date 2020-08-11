@@ -1,0 +1,25 @@
+<%- include('../partials/nav-bar')%>
+<div class="container-fluid mt-5">
+  <div class="single-blog-wrapper">
+    <% blog.forEach(blog => { %>
+    <div class="">
+      <div class="">
+        <h1 class="blog-post-heading text-center"><%= blog.title %></h1>
+        <p class="text-muted text-center mt-2">
+          <span>Published on <%= blog.date.toDateString() %> by </span
+          ><span><%= blog.author %></span>
+        </p>
+        <img
+          src="../images/dressing-for-court.png"
+          class="single-blog-image"
+          alt=""
+        />
+        <div class="blog-post-body-wrapper">
+          <%- blog.body %>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+<%- include('../partials/bottom-footer')%>

@@ -1,0 +1,80 @@
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+      <!-- Nav bar -->
+      <%- include('../partials/admin-side-nav') %>
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+  
+        <div id="content">
+         <div class="container-fluid">
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Analytics</h5>
+                            <img src="https://cdn.searchenginejournal.com/wp-content/uploads/2020/02/10-great-google-analytics-alternatives-5e4175671fa6a-760x400.png" class="card-img-top" alt="">
+                          </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Manage blog</h5>
+                          <% blogs.forEach(blog => { %>
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <div class="row">
+                                  <div class="col-sm-8"><%= blog.title %></div>
+                                  <div class="col-sm-2">
+                                    <button class="btn btn-outline-primary btn-sm">Edit</button>
+                                  </div>
+                                  <div class="col-sm-2">
+                                    <button class="btn btn-outline-danger btn-sm">Delete</button>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Add blog</h5>
+                          <%- include('../partials/messages')%>
+                          <%- include('../partials/success')%>
+
+                            <div class="row">
+                              <div class="col-md-12">
+                                  <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col-9">
+                                     <%- include('../partials/create-blog-post') %>
+                                    </div>
+                                    <div class="col"></div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+        </div>
+        <!-- End of Main Content -->
+      </div>
+      <!-- End of Content Wrapper -->
+  </div>
+    <!-- End of Page Wrapper -->
+  
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+  
+
+    

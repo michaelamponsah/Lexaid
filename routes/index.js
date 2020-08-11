@@ -1,15 +1,24 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const homeController = require('../controllers/home');
 
+const {
+  getHomepage,
+  getSingleBlogPost,
+  getPdf,
+} = require("../controllers/index");
 
-// GET homepage
-router.get('/', homeController.index);
-router.get('/home', homeController.index);
+// GET homepage and Single blog post view page
+
+router.route("/").get(getHomepage);
+router.route("/blog/:slug").get(getSingleBlogPost);
+router.route("/uploads/briefs/:brief").get(getPdf);
+
+/*
 router.get('/login', homeController.login);
 router.get('/dashboard', homeController.dashboard);
 router.get('/briefs', homeController.briefs);
 router.get('/quotes', homeController.quotes);
 router.get('/blog', homeController.blog);
+*/
 
 module.exports = router;

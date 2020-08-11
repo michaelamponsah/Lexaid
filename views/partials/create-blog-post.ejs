@@ -1,0 +1,12 @@
+<form action="/api/v1/blogs/blog" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <input type="text" class="form-control" name="postTitle" id="post-title" placeholder="Blog title" value="<%= typeof postTitle != 'undefined' ? postTitle : '' %>">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="postAuthor" id="post-author" placeholder="Blog author" value="<%= typeof postAuthor != 'undefined' ? postAuthor : '' %>">
+    </div>
+    <div class="form-group">
+      <textarea id="editor" cols="5" rows="10" class="form-control" name="postBody" value="<%= typeof postBody != 'undefined' ? postBody : '' %>"></textarea>
+    </div>
+    <button class="btn btn-info" onclick="tinyMCE.triggerSave(true, true)">Save</button>
+</form>

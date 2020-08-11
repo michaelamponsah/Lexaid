@@ -1,0 +1,497 @@
+<!-- NAV BAR -->
+<%- include('../partials/nav-bar')%>
+
+<div class="first-grid" id="top">
+  <div class="center-homepage-lexaid-text">
+    <div class="lexaid">
+      <h1>lexaid</h1>
+    </div>
+  </div>
+  <div class="side-text">
+    <h5 class="text">Your life just</h5>
+    <h5 class="text">got easier.</h5>
+    <p class="blue-text">Ask me how?</p>
+  </div>
+  <div class="arrow-image">
+    <a href="#down">
+      <img src="/images/arrow.png" alt="" />
+    </a>
+  </div>
+</div>
+
+<div class="second-grid">
+  <div class="first-col">
+    <div class="briefed-cases">
+      <h1>Briefed Cases</h1>
+      <p>
+        No time to read the full cases? We have the briefs with the principles,
+        fact and holdings.
+      </p>
+    </div>
+    <div class="quotes mt-5">
+      <h1>Quotes</h1>
+      <p>
+        Looking for authorities for a case, assignment or project? See what the
+        judges have to say.
+      </p>
+    </div>
+  </div>
+  <!-- End of column 1 -->
+  <div class="second-col">
+    <div class="mobile-image">
+      <img src="/images/mobile-app.png" alt="" />
+    </div>
+  </div>
+  <!-- End of column 2 -->
+  <div class="third-col">
+    <div class="section">
+      <h1>download mobile app</h1>
+    </div>
+    <div class="section ios-h5">
+      <h5>ios</h5>
+      <p>Coming soon</p>
+    </div>
+    <div class="section">
+      <h5>andriod</h5>
+      <p>Coming soon</p>
+    </div>
+    <div class="bottom-images">
+      <div class="under-construction">
+        <img src="./images/under-construction.png" alt="" />
+      </div>
+    </div>
+  </div>
+  <!-- End of column 3 -->
+</div>
+
+<div class="third-grid">
+  <div class="background-image"></div>
+  <div class="search-field container">
+    <form action="">
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control search-bar"
+          placeholder="Type to search"
+        />
+        <div class="input-group-btn">
+          <button class="btn btn-primary search-button">Search</button>
+        </div>
+      </div>
+      <!-- End of input group -->
+      <div class="subtitle">
+        <p>
+          Search for the case you need by the category, subject matter or title.
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="fourth-grid" id="briefs">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <div class="card mb-3">
+          <div class="card-header law-of-contract">Law of contract</div>
+          <div class="card-body">
+            <h5 class="card-title">
+              Briefs <span><%= lawOfContractBriefs.length %></span>
+            </h5>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-header criminal-law">Criminal law</div>
+          <div class="card-body">
+            <h5 class="card-title">
+              Briefs <span><%= criminalLawBriefs.length %></span>
+            </h5>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-header land-law">Land law and conveyancing</div>
+          <div class="card-body">
+            <h5 class="card-title">
+              Briefs <span><%= landLawBriefs.length %></span>
+            </h5>
+          </div>
+        </div>
+        <!-- End of cards -->
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-3">
+          <div class="card-header law-of-evidence">Law of evidence</div>
+          <div class="card-body">
+            <h5 class="card-title">
+              Briefs <span><%= lawOfEvidenceBriefs.length %></span>
+            </h5>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-header civil-procedure">Civil procedure</div>
+          <div class="card-body">
+            <h5 class="card-title">
+              Briefs <span><%= civilProcedureBriefs.length %></span>
+            </h5>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-header constitutional-law">Constitutional law</div>
+          <div class="card-body">
+            <h5 class="card-title">
+              Briefs <span><%= constitutionalLawBriefs.length %></span>
+            </h5>
+          </div>
+        </div>
+        <!-- End of cards -->
+      </div>
+      <!-- End of col -->
+    </div>
+  </div>
+  <!-- End of row -->
+</div>
+
+<div class="sixth-grid">
+  <div class="container">
+    <div class="single-brief-view">
+      <div class="row mt-5">
+        <div class="col-md-12">
+          <div class="card mb-3">
+            <div class="card-header law-of-contract single-pdf">
+              <p>Law of contract</p>
+            </div>
+            <div class="card-body">
+              <% lawOfContractBriefs.forEach(contract => { %>
+              <div class="briefs-display">
+                <div class="row">
+                  <div class="col-md-4 name">
+                    <%= contract.title%>
+                  </div>
+                  <div class="col-md-4 type">
+                    <%= contract.subCategory %>
+                  </div>
+                  <div class="col-md-4">
+                    <a
+                      class="download-button law-of-contract-dl-btn btn"
+                      href="/uploads/briefs/<%= contract.brief %>"
+                      target="_blank"
+                    >
+                      download
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <%}) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="seventh-grid">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <div class="card mb-3">
+          <div class="card-header criminal-law">Criminal law</div>
+          <div class="card-body">
+            <% criminalLawBriefs.forEach(criminal => { %>
+            <div class="briefs-display">
+              <div class="row">
+                <div class="col-md-4 name">
+                  <%= criminal.title%>
+                </div>
+                <div class="col-md-4 type">
+                  <%= criminal.subCategory %>
+                </div>
+                <div class="col-md-4">
+                  <a
+                    class="download-button criminal-law-dl-btn btn"
+                    href="/uploads/briefs/<%= criminal.brief %>"
+                    target="_blank"
+                  >
+                    download
+                  </a>
+                </div>
+              </div>
+            </div>
+            <%}) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="eight-grid">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <div class="card mb-3">
+          <div class="card-header land-law">Land law and conveyancing</div>
+          <div class="card-body">
+            <% landLawBriefs.forEach(land => { %>
+            <div class="briefs-display">
+              <div class="row">
+                <div class="col-md-4 name">
+                  <%= land.title%>
+                </div>
+                <div class="col-md-4 type">
+                  <%= land.subCategory %>
+                </div>
+                <div class="col-md-4">
+                  <a
+                    class="download-button land-law-dl-btn btn"
+                    href="uplods/briefs/<%= land.brief %>"
+                    target="_blank"
+                  >
+                    download
+                  </a>
+                </div>
+              </div>
+            </div>
+            <%}) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ninth-grid">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <div class="card mb-3">
+          <div class="card-header law-of-evidence">Law of evidence</div>
+
+          <div class="card-body">
+            <% lawOfEvidenceBriefs.forEach(evidence => { %>
+            <div class="briefs-display">
+              <div class="row">
+                <div class="col-md-4 name">
+                  <%= evidence.title%>
+                </div>
+                <div class="col-md-4 type">
+                  <%= evidence.subCategory %>
+                </div>
+                <div class="col-md-4">
+                  <a
+                    class="download-button evidence-law-dl-btn btn"
+                    href="/uploads/briefs/<%= evidence.brief %>"
+                    target="_blank"
+                  >
+                    download
+                  </a>
+                </div>
+              </div>
+            </div>
+            <%}) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tenth-grid">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <div class="card mb-3">
+          <div class="card-header civil-procedure">Civil procedure</div>
+          <div class="card-body">
+            <% civilProcedureBriefs.forEach(civil => { %>
+            <div class="briefs-display">
+              <div class="row">
+                <div class="col-md-4 name">
+                  <%= civil.title%>
+                </div>
+                <div class="col-md-4 type">
+                  <%= civil.subCategory %>
+                </div>
+                <div class="col-md-4">
+                  <a
+                    class="download-button civil-procedure-dl-btn btn"
+                    href="uploads/briefs/<%= civil.brief %>"
+                    target="_blank"
+                  >
+                    download
+                  </a>
+                </div>
+              </div>
+            </div>
+            <%}) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ELEVENTH GRID -->
+<div class="eleventh-grid">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <div class="card mb-3">
+          <div class="card-header constitutional-law">Constitutional law</div>
+          <div class="card-body">
+            <% constitutionalLawBriefs.forEach(constitutional => { %>
+            <div class="briefs-display">
+              <div class="row">
+                <div class="col-md-4 name">
+                  <%= constitutional.title%>
+                </div>
+                <div class="col-md-4 type">
+                  <%= constitutional.subCategory %>
+                </div>
+                <div class="col-md-4">
+                  <a
+                    class="download-button constitutional-law-dl-btn btn"
+                    href="uploads/briefs/<%= constitutional.brief %>"
+                    target="_blank"
+                  >
+                    download
+                  </a>
+                </div>
+              </div>
+            </div>
+            <%}) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TWELFTH GRID  -->
+<!-- QUOTES -->
+<div class="twelfth-grid" id="quotes-section">
+  <div class="container">
+    <div class="quote-category-header">Inspirational</div>
+    <div class="row mt-5">
+      <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+          <div class="card-body">
+            <p class="card-text"><cite>Persevere</cite></p>
+          </div>
+          <div class="card-footer">
+            <small>Posted 2 months ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+          <div class="card-body">
+            <p class="card-text"><cite>Make crime pay</cite></p>
+          </div>
+          <div class="card-footer">
+            <small>Posted 6 days ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+          <div class="card-body">
+            <p class="card-text"><cite>Be decent</cite></p>
+          </div>
+          <div class="card-footer">
+            <small>Posted 2 weeks ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+          <div class="card-body">
+            <p class="card-text"><cite>Don't take bribes</cite></p>
+          </div>
+          <div class="card-footer">
+            <small>Posted 1 day ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BLOG SECTION -->
+<% blogPosts.forEach(blogPost => { %>
+<div class="eleventh-grid" id="blog-section">
+  <div class="container">
+    <div class="blog-wrapper">
+      <div class="blog-image">
+        <img src="./images/study-law.png" alt="" class="blog-thumbnail" />
+      </div>
+      <div class="blog-content">
+        <div class="blog-heading h3"><%= blogPost.title %></div>
+        <p class="post-body">
+          <!-- <%- blogPost.body %> -->
+          <span class="read-more h3 text-muted"
+            ><a href="/blog/<%= blogPost.slug %>">Read more ...</a></span
+          >
+          <span class="posted-by text-muted h4"
+            ><%= blogPost.author %> <% %><small
+              ><%= blogPost.date.toDateString() %></small
+            ></span
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- End of container -->
+</div>
+<% }) %>
+
+<!-- CONTACT US -->
+<div class="fourteenth-grid" id="contact-us">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Get in touch</h5>
+            <form action="">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="First name"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Last name"
+                />
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email" />
+              </div>
+              <div class="form-group">
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="5"
+                  class="form-control"
+                  placeholder="Message"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <button class="form-control contact-btn">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/bottom-footer')%>

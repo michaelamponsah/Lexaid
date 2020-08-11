@@ -1,0 +1,187 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+  <!-- Nav bar -->
+  <%- include('../partials/admin-side-nav') %>
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+      <div class="container-fluid">
+        <div class="row mt-5">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Add Brief</h5>
+                <%- include('../partials/messages')%> <%-
+                include('../partials/success')%>
+                <form
+                  action="/api/v1/briefs/briefs"
+                  method="POST"
+                  enctype="multipart/form-data"
+                >
+                  <div class="form-group">
+                    <select
+                      name="briefCategory"
+                      id="brief-category"
+                      class="form-control"
+                    >
+                      <option
+                        value="<%= typeof briefCategory != 'undefined' ? briefCategory : '' %>"
+                        ><%= typeof briefCategory != 'undefined' ? briefCategory
+                        : "Select a Category" %></option
+                      >
+                      <option value="Law of Contract">Law of Contract</option>
+                      <option value="Criminal Law">Criminal Law</option>
+                      <option value="Constitutional Law"
+                        >Constitutional Law</option
+                      >
+                      <option value="Land Law">Land Law</option>
+                      <option value="Civil Procedure">Civil Procedure</option>
+                      <option value="Law of Evidence">Law of Evidence</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Sub category"
+                      name="subCategory"
+                      value="<%= typeof subCategory != 'undefined' ? subCategory : '' %>"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Brief title"
+                      name="briefTitle"
+                      value="<%= typeof briefTitle != 'undefined' ? briefTitle : '' %>"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="file"
+                      class="form-control-file"
+                      name="briefFile"
+                      value="<%= typeof briefFile != 'undefined' ? briefFile : '' %>"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <button class="btn btn-primary form-control">Save</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Manage Briefs</h5>
+                <% briefs.forEach(brief => { %>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="row">
+                      <div class="col-sm-8"><%= brief.title %></div>
+                      <div class="col-sm-2">
+                        <button class="btn btn-outline-primary btn-sm">Edit</button>
+                      </div>
+                      <div class="col-sm-2">
+                        <button class="btn btn-outline-danger btn-sm">Delete</button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Analytics</h5>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="row">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Cases</th>
+                            <th scope="col">Downloads</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td></td>
+                            <td>Boateng v. Dwinfuor</td>
+                            <td>14</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>The Republic v. Boafo</td>
+                            <td>84</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>Opoku v. Ofusu</td>
+                            <td>100</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Category</th>
+                          <th scope="col">Cases</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Law of contract</td>
+                          <td>18</td>
+                        </tr>
+                        <tr>
+                          <td>Criminal Law</td>
+                          <td>27</td>
+                        </tr>
+                        <tr>
+                          <td>Land Law</td>
+                          <td>10</td>
+                        </tr>
+                        <tr>
+                          <td>Law of evidence</td>
+                          <td>10</td>
+                        </tr>
+                        <tr>
+                          <td>Civil Procedure</td>
+                          <td>10</td>
+                        </tr>
+                        <tr>
+                          <td>Constitutional Law</td>
+                          <td>10</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Main Content -->
+  </div>
+  <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>

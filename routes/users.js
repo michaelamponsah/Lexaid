@@ -1,10 +1,16 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const loginController = require('../controllers/user');
-const dashboardController = require('../controllers/user');
 
-// LOGIN PAGE
-router.get('/login', loginController.login);
-router.get('/dashboard', dashboardController.dashboard);
+const {
+  getDashboard,
+  createRegister,
+  getRegister,
+  createLogin,
+  getLogin,
+} = require("../controllers/users");
+
+router.route("/dashboard").get(getDashboard);
+router.route("/register").get(getRegister).post(createRegister);
+router.route("/login").get(getLogin).post(createLogin);
 
 module.exports = router;
