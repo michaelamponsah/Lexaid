@@ -19,7 +19,7 @@
     "express-ejs-layouts": "^2.5.0",
     "express-fileupload": "^1.1.7-alpha.4",
     "express-session": "^1.17.0",
-    "marked": "^1.1.1",
+    "marked": "^4.0.10",
     "mongoose": "^5.9.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
